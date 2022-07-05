@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="container" appDragDrop (fileDropped)="onFileDropped($event)">
+    <input
+      type="file"
+      #fileDropRef
+      id="fileDropRef"
+      accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+      (change)="fileBrowseHandler($event)"
+    />
+    <mat-icon>file_upload</mat-icon>
+    <h3>Drag and drop file here</h3>
+    <h3>or</h3>
+    <button mat-button color="primary" for="fileDropRef">
+      Browse for file
+    </button>
+  </div>
+    <h4 class="name">
+      {{ file?.name }}
+    </h4>
+
+  <div class="table" [innerHTML]="data"></div>
+</div>
